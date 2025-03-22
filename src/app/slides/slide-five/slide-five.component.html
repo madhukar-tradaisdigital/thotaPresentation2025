@@ -1,0 +1,109 @@
+<div class="slide" id="slide5">
+    <div class="slide-branding">
+        <img src="./assets/thota-logo.png" alt="Thota Transformers Logo" class="logo-local">
+        <img src="http://thotatransformers.com/assets/img/logo.png" alt="Thota Transformers" class="logo-remote">
+    </div>
+    
+    <div class="presentation-content">
+        <!-- Header Section -->
+        <div class="slide-header" [@fadeIn]>
+            <h1>Infrastructure Development</h1>
+            <div class="subtitle">Expanding Capabilities for Future Growth</div>
+        </div>
+        
+        <!-- Full Content Display -->
+        <div class="content-grid" [@staggeredFadeIn]>
+            <!-- Testing Lab Section -->
+            <div class="content-card" [@cardEnter]="'in'">
+                <div class="card-header">
+                    <div class="section-number">01</div>
+                    <div class="section-title">Testing Lab Expansion</div>
+                </div>
+                <div class="card-media">
+                    <div class="media-frame">
+                        <img src="./assets/testlab.jpeg" alt="Testing Lab Expansion">
+                        <div class="image-overlay"></div>
+                        <div class="image-caption">State-of-the-art Testing Laboratory</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="feature-points">
+                        <div class="feature-point" *ngFor="let point of testingLabPoints; let i = index" 
+                             [@pointAnimation]="true" [style.animation-delay]="(i * 0.15) + 's'">
+                            <div class="point-bullet"><span>✓</span></div>
+                            <div class="point-text">{{point}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vacuum Technology Section -->
+            <div class="content-card" [@cardEnter]="'in'" [style.animation-delay]="'0.2s'">
+                <div class="card-header">
+                    <div class="section-number">02</div>
+                    <div class="section-title">Advanced Vacuum Technology</div>
+                </div>
+                <div class="card-media">
+                    <div class="media-frame">
+                        <img src="./assets/vaccumeOven.jpg" alt="Vacuum Technology">
+                        <div class="image-overlay"></div>
+                        <div class="image-caption">German-engineered Vacuum Technology</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="feature-points">
+                        <div class="feature-point" *ngFor="let point of vacuumTechPoints; let i = index" 
+                             [@pointAnimation]="true" [style.animation-delay]="(i * 0.15 + 0.2) + 's'">
+                            <div class="point-bullet"><span>✓</span></div>
+                            <div class="point-text">{{point}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testing Equipment Section -->
+            <div class="content-card" [@cardEnter]="'in'" [style.animation-delay]="'0.4s'">
+                <div class="card-header">
+                    <div class="section-number">03</div>
+                    <div class="section-title">Testing Equipment & Standards</div>
+                </div>
+                <div class="card-media">
+                    <div class="media-frame">
+                        <img src="./assets/tanDelta.jpg" alt="Tan Delta Testing">
+                        <div class="image-overlay"></div>
+                        <div class="image-caption">Advanced Testing Equipment</div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="feature-points">
+                        <div class="feature-point" *ngFor="let point of testingEquipPoints; let i = index" 
+                             [@pointAnimation]="true" [style.animation-delay]="(i * 0.15 + 0.4) + 's'">
+                            <div class="point-bullet"><span>✓</span></div>
+                            <div class="point-text">{{point}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer area with key metrics -->
+        <div class="metrics-footer" [@fadeIn]="'in'" [style.animation-delay]="'0.8s'">
+            <div class="metric">
+                <div class="metric-value">50 MVA</div>
+                <div class="metric-label">Testing Capacity</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">132 kV</div>
+                <div class="metric-label">Class Rating</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">QA Coverage</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">ISO</div>
+                <div class="metric-label">Certified Standards</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1278 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #1e293b;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: left;
+    transition: transform 0.5s ease;
+    background: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Remove background image from all slides by default */
+    background-image: none;
+}
+
+/* Add pattern only to regular slides, not slide1 */
+.slide:not(#slide1) {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230d47a1' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Modern redesign for the first slide */
+#slide1 {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    background: white;
+    color: #1e293b;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: none;
+}
+
+#slide1::before {
+    content: none;
+}
+
+#slide1 .hero-image {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+#slide1 .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+#slide1 .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+#slide1 .slide-content {
+    position: relative;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border: none;
+    max-width: none;
+    width: 100%;
+    height: 50vh;
+    flex-grow: 1;
+    display: flex;
+    border-top: 4px solid #0d47a1;
+    overflow: hidden;
+}
+
+#slide1 .content-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#slide1 .content-left {
+    flex: 6;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+#slide1 .content-right {
+    flex: 4;
+    background: linear-gradient(135deg, rgba(13, 71, 161, 0.9), rgba(25, 118, 210, 0.85));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#slide1 .content-right::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    top: -100px;
+    right: -100px;
+    z-index: 0;
+}
+
+#slide1 .content-right::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    bottom: -80px;
+    left: -80px;
+    z-index: 0;
+}
+
+#slide1 .key-point {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+#slide1 .point-icon {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#slide1 .point-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+#slide1 .point-text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#slide1 .year-badge {
+    width: auto;
+    background-color: #0d47a1;
+    color: white;
+    display: inline-block;
+    padding: 8px 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 22px;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+}
+
+#slide1 h1 {
+    font-size: 42px;
+    color: #0d47a1;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+#slide1 h2 {
+    color: #1976d2;
+    font-size: 26px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+#slide1 h2::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background-color: #1976d2;
+    bottom: -10px;
+    left: 0;
+}
+
+#slide1 .tagline {
+    color: #1e293b;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+
+#slide1 .highlight-text {
+    font-weight: 600;
+    color: #0d47a1;
+    font-size: 20px;
+    margin-top: 25px;
+    display: inline-block;
+    border-left: 3px solid #0d47a1;
+    padding-left: 15px;
+}
+
+/* Ensure regular slides have normal size logos */
+.slide:not(#slide1) .logo-local {
+    height: 70px;
+    width: auto;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    margin-right: 10px;
+}
+
+.slide:not(#slide1) .logo-remote {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    margin-right: 10px;
+}
+
+/* Button styling */
+#slide1 .cta-button {
+    background-color: #0d47a1;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#slide1 .cta-button:hover {
+    background-color: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Rest of slide styling remains unchanged */
+
+/* Logo styling as part of each slide */
+.slide-branding {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 20px;
+    left: 20px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    z-index: 10;
+}
+
+.logo-local {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    margin-right: 10px;
+}
+
+.logo-remote {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    margin-right: 10px;
+}
+.scale-06 {
+    scale: 0.6;
+}
+
+.slide-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding-top: 90px;
+    width: 100%;
+}
+
+/* Footer with company info */
+.slide-footer {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    padding: 10px;
+    z-index: 5;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Additional class for non-active slides */
+.slide.none {
+    display: none !important;
+}
+
+.navigation {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+
+.nav-button {
+    background: #0d47a1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-button:hover {
+    background: #1565c0;
+}
+
+.slide-indicators {
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    justify-content: center;
+    z-index: 100;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Typography enhancements */
+h1 {
+    color: #0d47a1;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+h2 {
+    color: #1565c0;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #1976d2;
+    font-size: 24px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+ul {
+    margin: 20px 0;
+    padding-left: 25px;
+}
+
+ul li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.highlighted {
+    background: #f1f8fe;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #1976d2;
+    margin: 25px 0;
+}
+
+.section-divider {
+    height: 2px;
+    background: linear-gradient(to right, #0d47a1, transparent);
+    margin: 30px 0;
+    width: 100%;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #0d47a1;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Achievement highlight */
+.achievement-box {
+    background: linear-gradient(to right, #f1f8fe, white);
+    border-left: 5px solid #1976d2;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 5px;
+}
+
+.big-number {
+    font-size: 42px;
+    font-weight: bold;
+    color: #0d47a1;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Counter for slides */
+.slide-count {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 14px;
+    color: #666;
+    z-index: 5;
+}
+
+/* Hide empty before content */
+.slide::before {
+    content: none;
+}
+
+/* Add subtle pattern to regular slides */
+.slide:not(#slide1)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(13, 71, 161, 0.03), transparent);
+    z-index: 0;
+}
+
+/* Make sure regular slides have the correct layout */
+.slide:not(#slide1) .slide-content {
+    z-index: 5; /* Ensure content is above any background elements */
+}
+
+/* Special logo positioning for first slide */
+#slide1 .slide-branding {
+    display: none; /* Hide the default branding container */
+}
+
+#slide1 .logo-container {
+    position: absolute;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.hero-image .logo-container {
+    position: absolute;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#slide1 .logo-left {
+    top: 20px;
+    left: 20px;
+}
+
+#slide1 .logo-right {
+    right: -145px;
+    transform: translateY(-150%); /* Move it up to appear nicely positioned at bottom of image */
+}
+
+#slide1 .logo-local {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    margin: 0;
+}
+
+#slide1 .logo-remote {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    margin: 0;
+}
+
+/* Enhanced styling for slide 2 */
+#slide2 {
+    position: relative;
+    overflow: hidden;
+}
+
+#slide2 .slide-content {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+}
+
+#slide2 h1 {
+    grid-column: 1 / -1;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+#slide2 h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: #0d47a1;
+}
+
+#slide2 .left-column {
+    position: relative;
+}
+
+#slide2 .right-column {
+    position: relative;
+    padding-left: 30px;
+    border-left: 1px solid rgba(25, 118, 210, 0.2);
+}
+
+#slide2 .growth-banner {
+    background: linear-gradient(135deg, #0d47a1, #1976d2);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15);
+    overflow: hidden;
+}
+
+#slide2 .growth-banner::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 80px;
+}
+
+#slide2 .growth-banner h2 {
+    color: white;
+    margin: 0 0 15px 0;
+    position: relative;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#slide2 .growth-banner p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#slide2 .welcome-message {
+    background: #f1f8fe;
+    border-left: 4px solid #1976d2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+#slide2 .welcome-message p {
+    margin: 0;
+    font-size: 17px;
+    color: #1e293b;
+}
+
+#slide2 .vision-box {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #1976d2;
+}
+
+#slide2 .vision-box h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#slide2 .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3f2fd;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+#slide2 .icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #1976d2;
+}
+
+#slide2 .vision-box p {
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+}
+
+#slide2 .core-values {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#slide2 .value {
+    flex: 1;
+    text-align: center;
+    padding: 15px 10px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-bottom: 3px solid #1976d2;
+}
+
+#slide2 .value span {
+    font-weight: 600;
+    color: #0d47a1;
+    font-size: 16px;
+}
+
+#slide2 .growth-chart {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+#slide2 .bar {
+    flex: 1;
+    background: #1976d2;
+    margin: 0 8px;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+}
+
+#slide2 .bar-1 { height: 30%; }
+#slide2 .bar-2 { height: 45%; }
+#slide2 .bar-3 { height: 65%; }
+#slide2 .bar-4 { height: 100%; background: #0d47a1; }
+
+#slide2 .bar::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 2px solid #1976d2;
+    border-radius: 50%;
+}
+
+#slide2 .bar-4::after {
+    border-color: #0d47a1;
+    width: 14px;
+    height: 14px;
+}
+
+#slide2 .timeline-labels {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+#slide2 .timeline-label {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Add to the existing styles */
+.analytics-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.analytics-column {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    position: relative;
+}
+
+.analytics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.analytics-header h2 {
+    font-size: 26px;
+    color: #0d47a1;
+    margin: 0;
+}
+
+.analytics-header h3 {
+    margin: 0;
+    color: #0d47a1;
+    font-size: 20px;
+}
+
+.total-badge {
+    background: #0d47a1;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.analytics-data {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.data-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.data-label {
+    flex: 0 0 120px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: right;
+    color: #444;
+}
+
+.data-bar {
+    height: 24px;
+    min-width: 30px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: width 0.5s ease-in-out;
+}
+
+/* Updated styling for slide 3 */
+.client-network {
+    display: flex;
+    background: linear-gradient(135deg, #f1f8fe, #ffffff);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #0d47a1;
+}
+
+.network-icon {
+    flex: 0 0 60px;
+    height: 60px;
+    background: #0d47a1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.network-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.network-content {
+    flex: 1;
+}
+
+.network-content h3 {
+    margin-top: 0;
+    color: #0d47a1;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.network-content p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #1e293b;
+}
+
+.analytics-comparison {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin: 30px 0;
+}
+
+.comparison-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.comparison-year {
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.comparison-year.current {
+    background: rgba(13, 71, 161, 0.1);
+}
+
+.comparison-year.previous {
+    background: rgba(128, 128, 128, 0.1);
+}
+
+.comparison-year h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.total-count {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.comparison-year.current .total-count {
+    color: #0d47a1;
+}
+
+.comparison-year.previous .total-count {
+    color: #757575;
+}
+
+.data-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category {
+    display: flex;
+}
+
+.category-label {
+    flex: 0 0 120px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.category-bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.year-now, .year-prev {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    min-width: 40px;
+    position: relative;
+}
+
+.year-now {
+    background: linear-gradient(to right, #1976d2, #0d47a1);
+    box-shadow: 0 2px 5px rgba(13, 71, 161, 0.3);
+}
+
+.year-prev {
+    background: linear-gradient(to right, #9e9e9e, #757575);
+    box-shadow: 0 2px 5px rgba(117, 117, 117, 0.3);
+}
+
+.growth-indicator {
+    display: flex;
+    align-items: center;
+    background: #f1f8fe;
+    border-radius: 30px;
+    padding: 15px 25px;
+    margin-top: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    width: fit-content;
+}
+
+.growth-icon {
+    background: #4caf50;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.growth-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.growth-text {
+    font-size: 18px;
+}
+
+.growth-text p {
+    margin: 0;
+}
+
+.growth-text strong {
+    color: #4caf50;
+}
+
+/* Updated styling for slide 3 with full-width layout and chart */
+.slide-content.full-width {
+    max-width: 100%;
+    width: 100%;
+    padding: 90px 60px 30px 60px;
+}
+
+.performance-grid {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    height: calc(100vh - 240px);
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-column.left {
+    flex: 0 0 38%;
+}
+
+.grid-column.right {
+    flex: 0 0 62%;
+    position: relative;
+}
+
+.client-network-wide {
+    display: flex;
+    background: linear-gradient(135deg, #f1f8fe, #ffffff);
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #0d47a1;
+    margin-bottom: 20px;
+}
+
+.network-icon {
+    flex: 0 0 50px;
+    height: 50px;
+    background: #0d47a1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.network-icon svg {
+    width: 25px;
+    height: 25px;
+    fill: white;
+}
+
+.network-content h3 {
+    margin-top: 0;
+    color: #0d47a1;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.network-content p {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1e293b;
+}
+
+.stats-highlights {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 3px solid #1976d2;
+}
+
+.stat-item.growth {
+    border-color: #4caf50;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0d47a1;
+    margin-bottom: 8px;
+}
+
+.stat-item.growth .stat-number {
+    color: #4caf50;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.3;
+}
+
+.key-observations {
+    background: white;
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex-grow: 1;
+}
+
+.key-observations h3 {
+    margin-top: 0;
+    color: #0d47a1;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.key-observations ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.key-observations li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.analytics-header {
+    margin-bottom: 15px;
+}
+
+.analytics-header h2 {
+    font-size: 26px;
+    color: #0d47a1;
+    margin: 0;
+}
+
+.chart-container {
+    flex-grow: 1;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: calc(100% - 70px);
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.color-indicator {
+    width: 20px;
+    height: 3px;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+
+.color-indicator.current {
+    background-color: #0d47a1;
+}
+
+.color-indicator.previous {
+    background-color: #757575;
+}
+
+/* Required media query to make sure chart is responsive */
+@media (max-height: 700px) {
+    .stats-highlights .stat-number {
+        font-size: 24px;
+    }
+    
+    .stats-highlights .stat-label {
+        font-size: 12px;
+    }
+    
+    .key-observations li {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+}
+
+/* Enhanced full-width styling for slide 3 */
+.slide-content.full-width-expanded {
+    max-width: 100%;
+    width: 100%;
+    padding: 90px 40px 30px 40px;
+}
+
+.performance-grid.expanded {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    height: calc(100vh - 240px);
+}
+
+.performance-grid.expanded .grid-column.left {
+    flex: 0 0 30%;
+}
+
+.performance-grid.expanded .grid-column.right {
+    flex: 0 0 70%;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.color-box {
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+.color-box.blue {
+    background-color: #0d47a1;
+}
+
+.color-box.gray {
+    background-color: #757575;
+}
+
+.color-box.diff {
+    background-color: #4caf50;
+}
+
+.blue-text {
+    color: #0d47a1;
+    font-weight: 500;
+}
+
+.gray-text {
+    color: #757575;
+    font-weight: 500;
+}
+
+.green-text {
+    color: #4caf50;
+    font-weight: 500;
+}

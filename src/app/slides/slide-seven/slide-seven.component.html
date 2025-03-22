@@ -1,0 +1,62 @@
+<div class="slide" id="slide7">
+    <div class="slide-branding">
+        <img src="./assets/thota-logo.png" alt="Thota Transformers Logo" class="logo-local">
+        <img src="http://thotatransformers.com/assets/img/logo.png" alt="Thota Transformers" class="logo-remote">
+    </div>
+    <div class="presentation-content">
+        <!-- Enhanced header section with accent bar -->
+        <div class="slide-header" [@fadeIn]>
+            <h1>In-House Radiator Manufacturing</h1>
+            <div class="accent-bar"></div>
+            <div class="subtitle">Enhancing Quality and Efficiency</div>
+        </div>
+        
+        <!-- Key insight callout -->
+        <div class="insight-callout" [@fadeIn]="'in'" [style.animation-delay]="'0.3s'">
+            <div class="insight-header">
+                <svg class="insight-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                Key Investment Impact
+            </div>
+            <div class="insight-content">
+                In-house radiator manufacturing delivers <span class="highlight">faster turnaround times</span> with <span class="highlight">superior quality control</span>
+            </div>
+        </div>
+
+        <div class="content-columns" [@staggeredFadeIn]>
+            <div class="content-column">
+                <ul class="feature-points">
+                    <li class="feature-point" [@pointAnimation]="true" [style.animation-delay]="'0.2s'">
+                        <div class="point-bullet"><span>✓</span></div>
+                        <div class="point-text"><strong>Reduced Delivery Time:</strong> By manufacturing radiators in-house, we ensure faster turnaround, minimizing reliance on external vendors.</div>
+                    </li>
+                    <li class="feature-point" [@pointAnimation]="true" [style.animation-delay]="'0.3s'">
+                        <div class="point-bullet"><span>✓</span></div>
+                        <div class="point-text"><strong>Improved Quality:</strong> Continuous quality enhancement with in-house control, including grit blasting for superior surface finishing that boosts durability and performance.</div>
+                    </li>
+                    <li class="feature-point" [@pointAnimation]="true" [style.animation-delay]="'0.4s'">
+                        <div class="point-bullet"><span>✓</span></div>
+                        <div class="point-text"><strong>Reduced Vendor Dependency:</strong> Overcoming the challenge of choosing between poor delivery times or compromised quality from external suppliers.</div>
+                    </li>
+                    <li class="feature-point" [@pointAnimation]="true" [style.animation-delay]="'0.5s'">
+                        <div class="point-bullet"><span>✓</span></div>
+                        <div class="point-text"><strong>Increased Production Capacity:</strong> Recent investment in an automatic machine to boost output and meet growing demand.</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-column image-column">
+                <div class="image-container" [@fadeInRight]="'in'">
+                    <img src="./assets/radiator.jpeg" alt="In-House Radiator Manufacturing" class="slide-image">
+                    <div class="image-overlay"></div>
+                    <div class="image-caption">State-of-the-art In-House Radiator Facility</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer area with summary -->
+        <div class="footer-summary" [@fadeIn]="'in'" [style.animation-delay]="'0.8s'">
+            <div class="summary-line">
+                These strategic investments reflect our commitment to quality, efficiency, and customer satisfaction.
+            </div>
+        </div>
+    </div>
+</div>

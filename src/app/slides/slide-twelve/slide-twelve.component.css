@@ -1,0 +1,17 @@
+/* CSS moved from slide-nine */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #0d47a1, transparent);
+  margin: 2rem 0;
+}
+
+.highlighted {
+  background-color: #f5f7fa;
+  border-left: 4px solid #0d47a1;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Add any other slide-nine specific CSS here */

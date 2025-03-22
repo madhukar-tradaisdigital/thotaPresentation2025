@@ -1,0 +1,154 @@
+<div class="slide" id="slide6">
+    <div class="slide-branding">
+        <img src="./assets/thota-logo.png" alt="Thota Transformers Logo" class="logo-local">
+        <img src="http://thotatransformers.com/assets/img/logo.png" alt="Thota Transformers" class="logo-remote">
+    </div>
+    
+    <div class="presentation-content" [@staggeredFadeIn]>
+        <!-- Enhanced Header Section with accent bar -->
+        <div class="slide-header" [@fadeIn]>
+            <h1>Digital Integration & Production Capacity</h1>
+            <div class="accent-bar"></div>
+            <div class="subtitle">Enhancing Efficiency Through Technology</div>
+        </div>
+
+        <!-- Key insight callout - similar to slide-three-point-six -->
+        <div class="insight-callout" [@fadeIn]="'in'" [style.animation-delay]="'0.3s'">
+            <div class="insight-header">
+                <svg class="insight-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                Key Investment Impact
+            </div>
+            <div class="insight-content">
+                Digital integration combined with production capacity expansion resulted in 
+                <span class="highlight">40% efficiency boost</span>
+            </div>
+        </div>
+        
+        <!-- Two-column layout replaces the card grid -->
+        <div class="content-split">
+            <!-- Left Column: Digital Integration -->
+            <div class="content-column digital-integration" [@fadeInLeft]="'in'">
+                <div class="section-header">
+                    <div class="section-number">01</div>
+                    <div class="section-title">Digital Integration</div>
+                </div>
+                
+                <!-- ERP System with image -->
+                <div class="subsection erp-subsection">
+                    <h3 class="subsection-title">ERP System Implementation</h3>
+                    <div class="media-container">
+                        <img src="./assets/erp.png" alt="ERP System">
+                        <div class="image-overlay"></div>
+                        <div class="image-caption">Enterprise Resource Planning</div>
+                    </div>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item" *ngFor="let point of erpSystemPoints; let i = index" [@pointAnimation]="true" 
+                             [style.animation-delay]="(i * 0.15) + 's'">
+                            <div class="point-bullet">✓</div>
+                            <div class="point-content">
+                                <h3 class="point-title">{{point.title}}</h3>
+                                <p class="point-description">{{point.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile App Integration (no image) -->
+                <div class="subsection mobile-subsection">
+                    <h3 class="subsection-title">Mobile App Integration</h3>
+                    <div class="feature-points">
+                        <div class="feature-point" *ngFor="let point of mobileAppPoints; let i = index" [@pointAnimation]="true" 
+                             [style.animation-delay]="(i * 0.15 + 0.2) + 's'">
+                            <div class="point-bullet"><span>✓</span></div>
+                            <div class="point-text">{{point}}</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Digital integration metrics -->
+                    <div class="metrics-row">
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <div class="metric-value">100%</div>
+                            <div class="metric-label">Digital Integration</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <div class="metric-value">24/7</div>
+                            <div class="metric-label">Real-time Monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Production Capacity -->
+            <div class="content-column production-capacity" [@fadeInRight]="'in'">
+                <div class="section-header">
+                    <div class="section-number">02</div>
+                    <div class="section-title">Production Capacity</div>
+                </div>
+                
+                <!-- Production capacity with image -->
+                <div class="media-container large-media">
+                    <img src="./assets/windingMachines.jpeg" alt="Winding Machines">
+                    <div class="image-overlay"></div>
+                    <div class="image-caption">Expanded Winding Machine Capacity</div>
+                </div>
+                
+                <div class="production-details">
+                    <h3 class="subsection-title">Production Capacity Expansion</h3>
+                    <div class="feature-points">
+                        <div class="feature-point" *ngFor="let point of productionPoints; let i = index" [@pointAnimation]="true" 
+                             [style.animation-delay]="(i * 0.15) + 's'">
+                            <div class="point-bullet"><span>✓</span></div>
+                            <div class="point-text">{{point}}</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Production metrics -->
+                    <div class="metrics-highlight">
+                        <div class="metric-item highlight-metric">
+                            <div class="metric-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3 6 12H2"></path>
+                                </svg>
+                            </div>
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Efficiency Boost</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 20V10M18 20V4M6 20v-6"></path>
+                                </svg>
+                            </div>
+                            <div class="metric-value">7</div>
+                            <div class="metric-label">Total Winding Machines</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer area with summary -->
+        <div class="footer-summary" [@fadeIn]="'in'" [style.animation-delay]="'0.8s'">
+            <div class="summary-line">
+                <span class="highlight-text">Strategic Investment:</span> Integrated digital solutions with expanded production capabilities
+            </div>
+            <div class="summary-line">
+                <span class="highlight-text">Business Impact:</span> Enhanced operational efficiency and reduced product delivery times
+            </div>
+        </div>
+    </div>
+</div>

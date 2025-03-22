@@ -1,0 +1,1146 @@
+/* Modern Design System - Using body instead of :root */
+body {
+  --primary: #2C5282;
+  --primary-dark: #1A365D;
+  --primary-light: #4299E1;
+  --accent: #E53E3E;
+  --accent-light: #FC8181;
+  --accent-dark: #C53030;
+  --gray-50: #F7FAFC;
+  --gray-100: #EDF2F7;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E0;
+  --gray-400: #A0AEC0;
+  --gray-500: #718096;
+  --gray-600: #4A5568;
+  --gray-700: #2D3748;
+  --gray-800: #1A202C;
+  --success: #38A169;
+  --warning: #ED8936;
+  --info: #3182CE;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+}
+
+/* Layout Styles */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  height: calc(100vh - 240px);
+}
+
+.analytics-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Analytics Cards */
+.analytics-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.analytics-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #E53E3E;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.card-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-container {
+  flex: 1;
+  position: relative;
+  min-height: 300px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.doughnut-container {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add chart legend */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-color.effort {
+  background-color: #E53E3E;
+}
+
+.legend-color.enquiry {
+  background-color: #4299E1;
+}
+
+.legend-color.items {
+  background-color: #38A169;
+}
+
+/* Tooltip custom styles */
+.custom-tooltip {
+  background-color: #2D3748 !important;
+  padding: 10px !important;
+  border-radius: 6px !important;
+}
+
+/* Key Insights Section */
+.key-insights {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+
+.insight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  flex: 1;
+  max-width: 45%;
+}
+
+.insight-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+}
+
+.insight-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.insight-icon.blue {
+  background-color: #4299E1;
+}
+
+.insight-icon.orange {
+  background-color: #ED8936;
+}
+
+.insight-content {
+  flex: 1;
+}
+
+.insight-title {
+  font-size: 0.75rem;
+  color: #718096;
+  margin-bottom: 0.2rem;
+}
+
+.insight-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2D3748;
+  margin-bottom: 0.2rem;
+}
+
+.insight-description {
+  font-size: 0.75rem;
+  color: #4A5568;
+}
+
+/* Stats Card */
+.stats-card {
+  padding: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  background-color: #f7fafc;
+  margin: 0.5rem;
+  border-radius: 8px;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2D3748;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.stat-change {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+}
+
+.stat-change.positive {
+  background-color: rgba(56, 161, 105, 0.15);
+  color: #38A169;
+}
+
+.stat-change.negative {
+  background-color: rgba(229, 62, 62, 0.15);
+  color: #E53E3E;
+}
+
+/* Insight List Styles */
+.insight-card {
+  overflow-y: auto;
+}
+
+.insight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.insight-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.5rem;
+}
+
+.insight-marker {
+  width: 8px;
+  height: 8px;
+  background-color: #4299E1;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+}
+
+.insight-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4A5568;
+}
+
+/* Header Styling */
+.main-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.main-header h1 {
+  margin-bottom: 0.25rem;
+  color: var(--gray-800);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.subheading {
+  color: var(--gray-500);
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .analytics-grid {
+    height: auto;
+  }
+}
+
+/* Match other slides */
+.slide-footer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: var(--gray-500);
+  padding: 10px;
+  z-index: 5;
+}
+
+.slide-count {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+/* Branding */
+.slide-branding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.slide-branding img {
+    height: 2.5rem;
+    object-fit: contain;
+}
+
+/* Zero Results Table Styles */
+.zero-results-table {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.table-container {
+  overflow-x: auto;
+  height: 100%;
+}
+
+.effort-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.effort-table thead {
+  background-color: #f1f5f9;
+}
+
+.effort-table th {
+  padding: 0.8rem;
+  text-align: left;
+  color: #475569;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #f1f5f9;
+}
+
+.effort-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.effort-table tbody tr:hover {
+  background-color: rgba(229, 62, 62, 0.05);
+}
+
+.effort-table td:first-child {
+  font-weight: 500;
+}
+
+/* Chart container adjustments */
+.insight-card .chart-container {
+  height: 180px;
+  min-height: auto;
+}
+
+/* Chart Styles */
+.chart-card {
+  flex: 2;
+}
+
+/* Table Styles */
+.table-card {
+  flex: 3;
+}
+
+/* Base Slide Layout */
+.slide-contents.modern-design {
+  padding: 0 1.5rem;
+  overflow: hidden;
+  height: calc(100vh - 130px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-item {
+  background-color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 0.75rem 1rem;
+  flex: 1;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.stat-item.highlight::before {
+  background-color: var(--accent);
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+/* Main Content Grid */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0; /* Fix for Firefox grid in flex container */
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card Design */
+.card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.header-tag {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.chart-container {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  position: relative;
+  min-height: 280px;
+}
+
+.chart-note {
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  text-align: center;
+  border-top: 1px solid var(--gray-100);
+}
+
+/* Table Styles */
+.filter-selector select {
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--gray-700);
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-selector select:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+}
+
+.table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 1rem 1rem;
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.modern-table thead {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+}
+
+.modern-table th {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  color: var(--gray-500);
+  font-weight: 600;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.modern-table tbody tr {
+  border-bottom: 1px solid var(--gray-100);
+  transition: background-color 0.15s ease;
+}
+
+.modern-table tbody tr:hover {
+  background-color: var(--gray-50);
+}
+
+.modern-table td {
+  padding: 0.85rem 0.5rem;
+  color: var(--gray-700);
+}
+
+/* Priority styling */
+.priority-high {
+  background-color: rgba(229, 62, 62, 0.05);
+}
+
+.priority-high:hover {
+  background-color: rgba(229, 62, 62, 0.1) !important;
+}
+
+/* Company cell */
+.company-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.company-name {
+  font-weight: 500;
+}
+
+.priority-badge {
+  display: inline-block;
+  background-color: var(--accent-light);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Effort meter */
+.effort-meter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.effort-value {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.effort-bar {
+  height: 5px;
+  background-color: var(--gray-100);
+  border-radius: 2.5px;
+  overflow: hidden;
+}
+
+.effort-fill {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 2.5px;
+}
+
+/* Insights Section */
+.insights-section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.insight-card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.insight-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.insight-icon.alert {
+  background-color: var(--accent);
+}
+
+.insight-icon.action {
+  background-color: var(--info);
+}
+
+.insight-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.insight-title {
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.insight-desc {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+/* Ratio Indicator Styling */
+.ratio-cell {
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.ratio-cell.high-ratio {
+  color: var(--accent);
+}
+
+/* Font Awesome Icons */
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'); */
+
+/* Expanded chart layout */
+.content-grid.expanded-chart {
+  grid-template-columns: 1.2fr 0.8fr;
+  margin-top: 1rem;
+  height: calc(100% - 80px); /* Adjust for header height */
+}
+
+.chart-card-expanded {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chart-container.expanded {
+  flex: 1;
+  min-height: 400px;
+}
+
+/* Since stats bar is removed, adjust spacing */
+.main-header {
+  margin-bottom: 1rem;
+}
+
+/* Make chart bigger and more visible */
+.left-column .card {
+  border-left: 4px solid var(--accent);
+}
+
+/* Adjust table sizing to match expanded chart layout */
+.right-column .card {
+  height: calc(100% - 90px); /* Adjust for insights section */
+}
+
+.table-wrapper {
+  max-height: calc(100% - 50px); /* Subtract header height */
+}
+
+.insights-section {
+  margin-top: 1rem;
+  height: 80px;
+}
+
+/* Expanded chart layout - Make chart significantly bigger */
+.content-grid.expanded-chart {
+  grid-template-columns: 1.5fr 0.5fr; /* Increase chart column width from 1.2fr to 1.5fr */
+  margin-top: 0.75rem; /* Reduce top margin to provide more vertical space */
+  height: calc(100% - 70px); /* Adjust for header height */
+}
+
+.chart-card-expanded {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0; /* Remove padding from the card to maximize chart space */
+}
+
+.chart-card-expanded .card-header {
+  padding: 0.75rem 1rem; /* Reduce header padding */
+}
+
+.chart-container.expanded {
+  flex: 1;
+  min-height: 450px; /* Increase minimum height */
+  padding: 0.5rem; /* Reduce padding to maximize chart area */
+}
+
+.chart-note {
+  padding: 0.5rem; /* Reduce padding */
+  font-size: 0.75rem; /* Smaller font to save space */
+}
+
+/* Improve right column sizing to match expanded chart layout */
+.right-column .card {
+  height: calc(100% - 70px); /* Adjust for insights section */
+}
+
+.right-column .table-wrapper {
+  padding: 0 0.5rem 0.5rem; /* Reduce padding */
+}
+
+.insights-section {
+  margin-top: 0.75rem;
+  height: 60px;
+}
+
+.insights-section .insight-card {
+  padding: 0.75rem; /* Reduce padding */
+}
+
+/* Make table more compact */
+.modern-table td,
+.modern-table th {
+  padding: 0.6rem 0.4rem; /* Reduce cell padding */
+}
+
+/* Expanded chart layout - Make chart wider and take more space */
+.content-grid.expanded-chart {
+  grid-template-columns: 1.8fr 0.2fr; /* Give much more space to chart column */
+  margin-top: 0.5rem; /* Reduce top margin further */
+  height: calc(100% - 60px); /* More vertical space */
+}
+
+.chart-card-expanded {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.chart-card-expanded .card-header {
+  padding: 0.5rem 0.75rem; /* Smaller header */
+}
+
+.chart-container.expanded {
+  flex: 1;
+  min-height: 350px; /* Reduced height */
+  max-height: 400px; /* Limit maximum height */
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+}
+
+.chart-note {
+  padding: 0.4rem;
+  font-size: 0.7rem;
+}
+
+/* Make right column extremely compact */
+.right-column {
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 0.8rem;
+}
+
+.right-column .card {
+  height: calc(100% - 60px);
+}
+
+.right-column .card-header {
+  padding: 0.5rem;
+}
+
+.right-column .card-header h2 {
+  font-size: 0.9rem;
+}
+
+.insights-section {
+  margin-top: 0.5rem;
+  height: 55px;
+}
+
+/* Hide some elements to focus on the chart */
+.filter-selector, .header-tag {
+  display: none;
+}
+
+/* Improve chart visibility */
+.left-column .card {
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+/* Fixed layout with absolute positioning to avoid growth issues */
+.slide-contents.fixed-layout {
+  padding: 0 1.5rem;
+  height: calc(100vh - 120px); /* Increased height by reducing padding */
+  position: relative;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 0.5rem; /* Reduced from 0.75rem */
+}
+
+.main-header h1 {
+  font-size: 1.6rem; /* Reduced slightly */
+}
+
+.subheading {
+  font-size: 0.9rem; /* Reduced slightly */
+}
+
+/* Content layout with fixed dimensions */
+.content-wrapper {
+  display: flex;
+  height: calc(100% - 60px); /* Reduce header spacing to get more chart space */
+  gap: 1rem;
+}
+
+/* Chart container with fixed dimensions - INCREASED SIZE */
+.chart-wrapper {
+  flex: 1;
+  width: 85%; /* Wider chart */
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-left: 5px solid var(--accent);
+  max-height: 500px; /* Increased from 450px */
+}
+
+/* Fixed size chart container to prevent growth - INCREASED SIZE */
+#chartContainer {
+  height: 420px; /* Increased from 350px */
+  width: 100%;
+  /* padding: 10px; */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Data section - NARROWER */
+.data-wrapper {
+  width: 15%; /* Narrower sidebar to give more space to chart */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer & Branding - keep existing styles */
+.slide-footer,
+.slide-count,
+.slide-branding {
+  /* ...existing code... */
+}
+
+/* Simplify and use less CSS to avoid conflicts */
+.logo-local, .logo-remote {
+  height: 40px;
+}
+
+/* Full screen layout for maximum chart size */
+.slide-contents.full-screen-layout {
+  padding: 0 1rem;
+  height: calc(100vh - 100px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Minimalist header */
+.mini-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.mini-header h1 {
+  margin: 0;
+  color: var(--gray-800);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Maximized chart container */
+.fullscreen-chart-wrapper {
+  flex: 1;
+  width: 100%;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border-left: 6px solid var(--accent);
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+}
+
+#chartContainer {
+  height: 100%;
+  width: 100%;
+  /* padding: 15px; */
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Style the D3 chart */
+#chartContainer svg {
+  width: 100%;
+  height: 100%;
+}
+
+#chartContainer text {
+  font-size: 12px;
+  fill: var(--gray-700);
+}
+
+/* D3 Layout Styles */
+.slide-contents.d3-layout {
+  padding: 1rem;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray-50);
+}
+
+.mini-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.mini-header h1 {
+  margin-bottom: 0.2rem;
+  color: var(--gray-800);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.mini-header .subheading {
+  color: var(--gray-500);
+  font-size: 1rem;
+}
+
+.d3-chart-wrapper {
+  flex: 3; /* Take up more space for the chart */
+  background-color: white;
+  border-radius: var(--radius-lg); /* Add rounded borders */
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  border-left: 6px solid var(--accent);
+}
+
+#chartContainer {
+  width: 100%;
+  height: 100%;
+  /* padding: 1rem; */
+}
+
+#chartContainer svg {
+  width: 100%;
+  height: 100%;
+}
+
+#chartContainer text {
+  font-size: 12px;
+  fill: var(--gray-700);
+}
+
+/* New styles for the content container and text card */
+.content-container {
+  display: flex;
+  height: 100%; /* Ensure it takes up the full height */
+  gap: 1rem; /* Space between chart and text */
+}
+
+.text-card {
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px; /* Increased slightly for better readability */
+  height: 500px;
+  border-radius: 12px; /* More rounded corners */
+  background-color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem 1.75rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Start from top */
+  border: none;
+  background-image: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%); /* Subtle gradient */
+  position: relative;
+  margin-right: 1rem;
+}
+
+.text-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #38A169, #3182CE); /* Gradient border top */
+  border-radius: 12px 12px 0 0;
+}
+
+.text-card-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  border-radius: 50%;
+  background-color: rgba(56, 161, 105, 0.1);
+}
+
+.text-card-heading {
+  margin: 0 0 1.25rem;
+  color: #2D3748;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif; /* More modern font */
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.text-card-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #38A169, #3182CE);
+  border-radius: 3px;
+}
+
+.text-card-content {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #4A5568;
+  line-height: 1.8;
+  text-align: center;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif; /* Clean, readable font */
+  margin: 0;
+}
+
+/* Footer & Branding - keep existing styles */
+.slide-footer,
+.slide-count,
+.slide-branding {
+  /* ...existing code... */
+}
+
+/* Simplify and use less CSS to avoid conflicts */
+.logo-local, .logo-remote {
+  height: 40px;
+}
