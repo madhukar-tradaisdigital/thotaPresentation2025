@@ -1,47 +1,54 @@
 <div class="slide" id="slide38">
+  <!-- Standard slide branding used across presentation -->
   <div class="slide-branding">
     <img src="./assets/thota-logo.png" alt="Thota Transformers Logo" class="logo-local">
     <img src="http://thotatransformers.com/assets/img/logo.png" alt="Thota Transformers" class="logo-remote">
   </div>
   
-  <div class="slide-content">
-    <div class="header-container">
-      <h1>Customer Retention Analysis</h1>
-      <div class="subheading">Building Long-term Relationships</div>
+  <div class="presentation-content">
+    <!-- Standard header with accent bar -->
+    <div class="slide-header">
+      <h1>Competitor Market Position Analysis</h1>
+      <div class="accent-bar"></div>
     </div>
-
-    <div class="content-grid">
-      <div class="left-column">
-        <div class="analytics-card">
-          <div class="card-header">
-            <h2>Customer Retention Rate</h2>
-          </div>
+    
+    <!-- Chart Content Area - All charts in one row -->
+    <div class="chart-dashboard" [@staggeredFadeIn]>
+      <div class="chart-row full-width-row">
+        <div class="chart-panel" [@fadeInLeft]="'in'">
+          <div class="chart-title">Quality vs Price</div>
           <div class="chart-container">
-            <!-- Chart will be rendered here -->
+            <canvas id="quality-price-chart" width="400" height="300"></canvas>
+          </div>
+        </div>
+        
+        <div class="chart-panel" [@fadeIn]="'in'">
+          <div class="chart-title">Service vs Delivery</div>
+          <div class="chart-container">
+            <canvas id="service-delivery-chart" width="400" height="300"></canvas>
+          </div>
+        </div>
+        
+        <div class="chart-panel" [@fadeInRight]="'in'">
+          <div class="chart-title">Response Time vs Certification</div>
+          <div class="chart-container">
+            <canvas id="response-certification-chart" width="400" height="300"></canvas>
           </div>
         </div>
       </div>
-      
-      <div class="right-column">
-        <div class="insights-card">
-          <div class="insights-header">
-            <h2>Key Observations</h2>
-          </div>
-          <div class="insight-list">
-            <div class="insight-item">
-              <div class="insight-marker"></div>
-              <div class="insight-text">78% of customers from 2023-24 placed repeat orders in 2024-25</div>
-            </div>
-            <div class="insight-item">
-              <div class="insight-marker"></div>
-              <div class="insight-text">High retention rate in renewable energy sector at 85%</div>
-            </div>
-            <div class="insight-item">
-              <div class="insight-marker"></div>
-              <div class="insight-text">Industrial sector shows opportunity for improved retention strategies</div>
+    </div>
+    
+    <!-- Company Legend Section - Updated to match other slides -->
+    <div class="legend-section" [@fadeIn]>
+      <div class="legend-container">
+        <ng-container *ngFor="let competitor of competitors">
+          <div class="legend-item">
+            <div class="color-indicator" [style.background-color]="competitor.color"></div>
+            <div class="legend-text">
+              <span class="abbr">{{competitor.abbr}}</span> - {{competitor.name}}
             </div>
           </div>
-        </div>
+        </ng-container>
       </div>
     </div>
   </div>
